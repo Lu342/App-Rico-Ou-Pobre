@@ -44,12 +44,17 @@ class _RicoOuPobreWidgetState extends State<RicoOuPobreWidget> {
           children: <Widget>[
             Text(
               " R\$ $_valor ",
-              style: TextStyle(fontSize: 30, decoration: TextDecoration.none),
+              style: TextStyle(
+                fontSize: 30,
+                decoration: TextDecoration.none,
+              ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                RaisedButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      onPrimary: Colors.black, primary: Colors.white),
                   onPressed: () {
                     setState(() {
                       operacao('+');
@@ -60,7 +65,9 @@ class _RicoOuPobreWidgetState extends State<RicoOuPobreWidget> {
                   ),
                 ),
                 Padding(padding: EdgeInsets.all(5.0)),
-                RaisedButton(
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      onPrimary: Colors.black, primary: Colors.white),
                   onPressed: () {
                     setState(() {
                       operacao('-');
@@ -81,8 +88,8 @@ class _RicoOuPobreWidgetState extends State<RicoOuPobreWidget> {
               width: 2.0,
               height: 2.0,
             ),
-            FloatingActionButton(
-              child: Icon(Icons.replay),
+            ElevatedButton(
+              child: Text("Zerar"),
               onPressed: () {
                 setState(() {
                   _valor = 0;
